@@ -6,12 +6,12 @@ require 'kele/version'
 Gem::Specification.new do |spec|
   spec.name          = "kele"
   spec.version       = Kele::VERSION
-  spec.authors       = ["jdgonzales09"]
+  spec.authors       = ["JD Gonzales"]
   spec.email         = ["jd_gonzales@icloud.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A Ruby Gem to access Bloc API.}
+  spec.description   = %q{A Ruby Gem to access Bloc API for data such as users, checkpoints, and mentor availability.}
+  spec.homepage      = "http://rubygems.org/gems/kele"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -30,4 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_runtime_dependency 'httparty', '~> 0.13'
 end
