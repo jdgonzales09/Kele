@@ -28,7 +28,6 @@ class Kele
     def get_messages(page = nil)
       if page.nil?
         response = self.class.get("/message_threads", headers: { "authorization" => @auth_token })
-        pageCount = JSON.parse(response.body)
         totalPages = (1..(response["count"]/10 + 1)).map do |n|
           self.class.get("/message_threads?page=#{n}", headers: { "authorization" => @auth_token })
                     end
@@ -39,6 +38,23 @@ class Kele
       end
     end
 
+    def create_message(recipient_id, subject, body, thread_token = nil)
+        response = self.class.post("/messages", body: { 
+            "user_id": @user_id,
+            "recipient_id": recipient_id,
+            "token": thread_token,
+            "subject": subject,
+            "stripped-text": body
+        },
+        headers: { "authorization" => @auth_token })
+        puts response
+    end
 
+private
+
+    def student_id
+        response = self.class.get("/users/me", headers: { "authorization" => @auth_token })
+        @user_id = response["id"]
+    end
 
 end
