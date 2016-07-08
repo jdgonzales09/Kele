@@ -47,14 +47,39 @@ class Kele
             "stripped-text": body
         },
         headers: { "authorization" => @auth_token })
-        puts response
+        if response == 200
+            puts response
+        else
+            puts "Oops there was an error! Lemme check on that!"
+        end
     end
 
+    def create_submission(checkpoint_id, assignment_branch, assignment_commit_link, comment = nil)
+        response = self.class.post("/checkpoint_submissions", body: {
+            "assignment_branch": assignment_branch,
+            "assignment_commit_link": assignment_commit_link,
+            "checkpoint_id": checkpoint_id,
+            "comment": comment,
+            "enrollment_id": @enrollment_id
+        }, 
+        headers: { "authorization" => @auth_token })
+        if response == 200
+            puts response
+        else
+            puts "Oops, that's not right, lemme fix that"
+        end
+        
+    end
 private
 
     def student_id
         response = self.class.get("/users/me", headers: { "authorization" => @auth_token })
         @user_id = response["id"]
+    end
+
+    def enrollment_id
+        response = self.class.get("/users/me", headers: { "authorization" => @auth_token })
+        @enrollment_id = response["current_enrollment" "id"]
     end
 
 end
