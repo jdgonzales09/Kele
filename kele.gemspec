@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jd_gonzales@icloud.com"]
 
   spec.summary       = %q{A Ruby Gem to access Bloc API.}
-  spec.description   = %q{A Ruby Gem to access Bloc API for data such as users, checkpoints, and mentor availability.}
+  spec.description   = %q{A Ruby Gem to access Bloc API for data such as users, checkpoints, messages, and mentor availability.}
   spec.homepage      = "http://rubygems.org/gems/kele"
   spec.license       = "MIT"
 
