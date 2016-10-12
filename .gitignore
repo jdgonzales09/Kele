@@ -10,4 +10,4 @@
 /tmp/
 /.gem/
 .env
-spec/vcr
+/spec/vcr
