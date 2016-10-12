@@ -1,5 +1,5 @@
 require "kele/version"
-require "HTTParty"
+require "typhoeus"
 require "json"
 require "pry"
 require "roadmap"
@@ -7,12 +7,13 @@ require "roadmap"
 class Kele
 
     include Roadmap
-    include HTTParty
-    base_uri 'https://www.bloc.io/api/v1'
+    include Typhoeus
 
     def initialize(email, password)
-        response = self.class.post("/sessions", body: { "email": email, "password": password } )
-        @auth_token = response["auth_token"]
+        url = 'https://www.bloc.io/api/v1/sessions'
+        response = Typhoeus::Request.post(url, body: { "email": email, "password": password })
+        binding.pry
+        @auth_token = response.body["auth_token"]
     end
 
     def get_me

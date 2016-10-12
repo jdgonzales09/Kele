@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bloc.io/api/v1/sessions
+    body:
+      encoding: US-ASCII
+      string: email=jd_gonzales@icloud.com&password=Krimson030?!
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 12 Oct 2016 04:01:22 GMT
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"2b8799a931191c7fbc5dbaa9e43e4f7a"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - ahoy_visitor=656335b4-59bd-4154-ac1e-a5d485d54022; path=/; expires=Fri, 12
+        Oct 2018 04:01:22 -0000; secure
+      - ahoy_visit=416eb558-3270-40eb-bbc2-a849be5826c2; path=/; expires=Wed, 12 Oct
+        2016 08:01:22 -0000; secure
+      - XSRF-TOKEN=m7VayGBRVYOdvAK5UC%2Fowkf3wJ9zvZqBE%2F152T8NQE0%3D; path=/; secure
+      - _BlocAlpha_session2=UGM4a2JuNExwdG9zeFBadTdjcGZLa3dySkZCYlZvUmR6MVVzcC8yVTNzTnNWbnFLbHBQKzduSGY5dkQvbGpMYWVFNzBoKzhTdGJGUmd4VFhvSHBIMHRlTnFJSmxOeWJTRUllZ2VHZktGK1pXSVpPQ0s5SUxERmJ5V2hOVHd5Q3B6RGwvbENpQVkybHg5UDgvMzg4RG9VOXdJRkpNMlZzcXhhVkdMMXhpMUoybVlhaVZOMVhDT05xNW5PNmRHYXlpOGhUVkxwd0hhS2IrYXJqT1cvR2pLdz09LS1IYmYxdzR5R3BhTldhMVpETEh5a0V3PT0%3D--a30abbf9865a2276da66f8cb25e2b7adfe586b19;
+        domain=.bloc.io; path=/; secure; HttpOnly
+      X-Request-Id:
+      - 637b6565-55c6-4e93-85a2-d6836c88a2c4
+      X-Runtime:
+      - '0.188279'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcGlfa2V5IjoiOTI2ZjM3M2M3ZjY2NDc5MDg1ZTI0NjZkNzI1NjdmMTgiLCJ1c2VyX2lkIjoyMzQyMzg5LCJuYW1lIjoiSm9uYXRoYW4gR29uemFsZXMifQ.PNeVdwRB43TnpaitAM7sW2FJYQf4_Lbbx-fQUbB-tBM","user":{"id":2342389,"email":"jd_gonzales@icloud.com","created_at":"2016-05-25T16:50:13.659Z","updated_at":"2016-10-12T03:50:43.644Z","facebook_id":null,"first_name":"Jonathan","last_name":"Gonzales","role":"user","stripe_customer_id":"cus_8W7oxnhCi5E4mP","twitter_handle":"juliusdelta","skype_handle":"jd_gonzales_2","github_handle":"juliusdelta","time_zone":"Central
+        Time (US \u0026 Canada)","bio":"I was born and raised in Fort Worth, Texas
+        till I was 18 a promptly moved to Dallas to begin school and just \"get out\"
+        of Fort Worth. Began coding developing websites for my group of online friends
+        with simple HTML and it gradually grew a little more complicated. I put coding
+        on the back burner for years only picking it back up when I was bored, but
+        loved it more and more each time I did it. I recently had an opportunity to
+        pursue education and decided against the traditional CS degree and decided
+        really get hands on experience with Bloc.","photo_file_name":"Screen_Shot_2016-05-25_at_1.27.08_PM.png","photo_content_type":"image/png","photo_file_size":2093854,"photo_updated_at":"2016-05-25T18:27:33.862Z","send_new_message_emails":true,"referred_by_id":null,"slug":"jonathan-gonzales","os":"OS
+        X","last_seen_at":"2016-10-12T03:50:43.560Z","private_profile":false,"google_plus_id":null,"linkedin":"https://www.linkedin.com/in/jonathan-gonzales-134b1b68","quota":0,"old_first_visit_id":null,"selected_enrollment_chain_id":4930,"phone_num":"8177347453","title":null,"quota_limit":0,"dribbble_handle":null,"codecademy_handle":"jdgonzales","student_profile_id":null,"birthdate":"1970-01-01","gender":null,"first_visit_id":null,"codewars_handle":null}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://www.bloc.io/api/v1/sessions
+  recorded_at: Wed, 12 Oct 2016 04:01:22 GMT
+recorded_with: VCR 3.0.3
