@@ -1,6 +1,9 @@
 require 'spec_helper'
+require 'httparty'
+require 'vcr'
 
 describe Kele, type: :request do
+    include HTTParty
     context '.kele' do
 
         it 'has a version number' do
@@ -8,18 +11,19 @@ describe Kele, type: :request do
         end
 
         describe '#initialize' do
-            it "authenticates user", vcr: {cassette_name: :initialize} do
-            client = Kele.new(ENV['EMAIL'], ENV['PASSWORD'])
-            expect(client.instance_variable_get(:@auth_token)).to be_a String
+            it "authenticates user" do
+                VCR.use_cassette('initialize') do
+                    client = Kele.new(ENV['EMAIL'], ENV['PASSWORD'])
+                    expect(client.instance_variable_get(:@auth_token)).to be_a String
+                end
             end
         end
     end
-
     context 'authorized user' do
         before do
             @client = Kele.new(ENV['EMAIL'], ENV['PASSWORD'])
         end
-        
+
         describe '#get_me' do
             it "it returns an object when called", vcr: {cassette_name: :get_me} do
                 expect(@client.get_me).to be_a Object

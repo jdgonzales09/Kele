@@ -34,6 +34,8 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'json'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'vcr', '~> 3.0.3'
+  spec.add_development_dependency 'webmock'
   spec.add_development_dependency 'dotenv'
   spec.add_development_dependency 'nyan-cat-formatter'
+
 end
